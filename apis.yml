@@ -1,23 +1,79 @@
 aid: kive
 name: Kive
-description: 'Kive is a company surfaced as a portfolio company of creandum, eqt-ventures and added to
-  the API Evangelist network as a stub for enrichment. Sector: saas. This profile is a lead awaiting the
-  enrichment pipeline.'
+description: 'Kive is an AI product photography and campaign content platform for e-commerce
+  brands, built by TO LABS AB and used by more than 10,000 brands. It generates accurate
+  product shots, lifestyle scenes, campaign imagery and product videos from a brand''s
+  own assets, using a large catalogue of professionally curated visual presets ("studios")
+  tuned to categories such as fashion, cosmetics, skincare, jewellery and footwear. The
+  platform pairs generation with a creative asset library, AI-powered search, boards,
+  custom-trained subject models, bulk catalogue generation and editing tools (background
+  removal and replacement, canvas extension, upscaling). Kive publishes no public REST
+  API; its programmable surface is an OAuth-protected Model Context Protocol server at
+  mcp.kive.ai that lets agents browse workspaces and products and create images and
+  videos on the user''s credits.'
 url: https://raw.githubusercontent.com/api-evangelist/kive/refs/heads/main/apis.yml
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://mcp.kive.ai/kive_logo_192.png
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - creandum
 - eqt-ventures
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-legal-entity: TO LABS AB
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
-- Saas
-apis: []
+- SaaS
+- Artificial Intelligence
+- Generative AI
+- Creative
+- Product Photography
+- Digital Asset Management
+- E-Commerce
+- Images
+- Video
+- MCP
+apis:
+- aid: kive:mcp
+  name: Kive MCP Server
+  description: 'The Kive MCP server is Kive''s programmable interface: an OAuth 2.1
+    protected Model Context Protocol endpoint that lets an authorized agent browse Kive
+    workspaces, saved products, trained models, studios and video presets, create saved
+    products from a product page or image URL, generate product images and videos, edit
+    existing images and poll generation status. Actions run under the authorizing user''s
+    workspace permissions and spend that workspace''s credits.'
+  humanURL: https://kive.ai/mcp
+  baseURL: https://mcp.kive.ai/mcp
+  tags:
+  - MCP
+  - Generative AI
+  - Images
+  - Video
+  properties:
+  - type: MCPServer
+    url: mcp/kive-mcp.yml
+  - type: Documentation
+    url: https://kive.ai/docs/mcp/overview.md
+  - type: GettingStarted
+    url: https://kive.ai/docs/mcp/connect-any-client.md
+  - type: Authentication
+    url: authentication/kive-authentication.yml
+  - type: OAuthScopes
+    url: scopes/kive-scopes.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -26,3 +82,74 @@ maintainers:
 common:
 - type: Website
   url: https://www.kive.ai/
+- type: DeveloperPortal
+  url: https://kive.ai/mcp
+- type: Documentation
+  url: https://kive.ai/docs
+- type: GettingStarted
+  url: https://kive.ai/docs/introduction-getting-started/start-here.md
+- type: Support
+  url: https://kive.ai/docs/troubleshooting-faqs/contact-support.md
+- type: Blog
+  url: https://kive.ai/news
+- type: ChangeLog
+  url: changelog/kive-changelog.yml
+- type: Pricing
+  url: https://kive.ai/pricing
+- type: SignUp
+  url: https://kive.ai/signup
+- type: Login
+  url: https://kive.ai/login
+- type: TermsOfService
+  url: https://kive.ai/terms
+- type: PrivacyPolicy
+  url: https://kive.ai/privacy
+- type: MCPServer
+  url: mcp/kive-mcp.yml
+- type: Authentication
+  url: authentication/kive-authentication.yml
+- type: OAuthScopes
+  url: scopes/kive-scopes.yml
+- type: LLMsTxt
+  url: llms/kive-llms.txt
+- type: WellKnown
+  url: well-known/kive-well-known.yml
+- type: Conventions
+  url: conventions/kive-conventions.yml
+- type: Conformance
+  url: conformance/kive-conformance.yml
+- type: Compliance
+  url: https://trust.kive.ai/
+- type: TrustCenter
+  url: security/kive-trust-center.yml
+- type: Trust
+  url: https://trust.kive.ai/
+- type: VulnerabilityDisclosure
+  url: security/kive-vulnerability-disclosure.yml
+- type: Security
+  url: https://trust.kive.ai/
+- type: DomainSecurity
+  url: security/kive-domain-security.yml
+- type: Plans
+  url: plans/kive-plans.yml
+- type: RateLimits
+  url: rate-limits/kive-rate-limits.yml
+- type: Enterprise
+  url: https://kive.ai/enterprise
+- type: Customers
+  url: https://kive.ai/customers
+- type: Careers
+  url: https://kiveai.notion.site/Work-at-Kive-304f5135e42c8078ac44df36a1ba72b8
+- type: Twitter
+  url: https://twitter.com/getkive
+- type: YouTube
+  url: https://www.youtube.com/@kiveai
+- type: Instagram
+  url: https://instagram.com/kive.ai
+- type: Facebook
+  url: https://facebook.com/kiveai
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
