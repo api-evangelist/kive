@@ -1,0 +1,53 @@
+generated: '2026-07-19'
+method: searched
+source: https://kive.ai/pricing
+docs: https://kive.ai/docs/troubleshooting-faqs/credits-and-limits-faq.md
+model: credit-based
+notes: >-
+  Kive meters usage in credits rather than requests per second. There is no
+  published request-rate quota or rate-limit response header. The only
+  time-based throttle Kive documents is the free-image fallback that applies
+  once a workspace is out of credits.
+rate_limits:
+- plan: Free
+  limit_count: 40
+  limit_unit: credits
+  limit_period: one-time (verified Google or Google Workspace accounts only)
+  throttle: 1 free image every 30 minutes when out of credits
+- plan: Basic
+  limit_count: 1000
+  limit_unit: credits
+  limit_period: month
+  throttle: 1 free image every 30 minutes when out of credits
+- plan: Pro
+  limit_count: 5000
+  limit_unit: credits
+  limit_period: month
+  throttle: 1 free image every 20 minutes when out of credits
+- plan: Enterprise
+  limit_count: null
+  limit_unit: credits
+  limit_period: month
+  throttle: custom limits
+credit_costs:
+- {action: Remove background, credits: 1}
+- {action: Erase, credits: 2}
+- {action: Extend canvas, credits: 2}
+- {action: Replace object, credits: 4}
+- {action: Edit tool, credits: 10}
+- {action: Change background, credits: 10}
+- {action: Upscale image, credits: 10-20}
+- {action: Upscale video, credits: 40}
+- {action: Image generation, credits: varies by model and version count}
+- {action: Video generation, credits: varies by preset and length}
+rules:
+- Image generation cost is the per-image price multiplied by the number of versions
+  requested (default is 4).
+- Credits are only deducted for successful generations; failed generations and
+  content-filtered outputs are automatically refunded.
+- Unused credits roll over, capped at 2x the plan amount at renewal.
+- One-time credit purchases are capped each billing month at the plan's monthly
+  credit limit.
+- Downgrading forfeits credits above the new plan's rollover limit.
+- Free credits require a verified Google or Google Workspace account.
+headers: null

@@ -1,0 +1,69 @@
+generated: '2026-07-19'
+method: searched
+source: https://mcp.kive.ai/.well-known/oauth-authorization-server
+notes: >-
+  Kive's programmable surface is an MCP server, not a REST API, so REST-oriented
+  standards (JSON:API, OData, RFC 9457 problem details, OpenAPI) are not
+  applicable rather than failed. The OAuth/MCP authorization stack is
+  well-covered and verifiable from live discovery documents.
+standards:
+- id: mcp
+  name: Model Context Protocol
+  conforms: true
+  evidence: Published MCP server at https://mcp.kive.ai/mcp, documented at
+    https://kive.ai/docs/mcp/overview.md
+- id: oauth2
+  name: OAuth 2.0 / 2.1 authorization code
+  conforms: true
+  evidence: authorization_code + refresh_token grants advertised at
+    /.well-known/oauth-authorization-server
+- id: rfc8414
+  name: OAuth 2.0 Authorization Server Metadata
+  conforms: true
+  evidence: https://mcp.kive.ai/.well-known/oauth-authorization-server returns 200
+- id: rfc9728
+  name: OAuth 2.0 Protected Resource Metadata
+  conforms: true
+  evidence: https://mcp.kive.ai/.well-known/oauth-protected-resource returns 200
+- id: rfc7636
+  name: PKCE
+  conforms: true
+  evidence: code_challenge_methods_supported = [S256]
+- id: rfc6750
+  name: OAuth 2.0 Bearer Token Usage
+  conforms: true
+  evidence: bearer_methods_supported = [header]
+- id: rfc7009
+  name: OAuth 2.0 Token Revocation
+  conforms: true
+  evidence: revocation_endpoint = https://mcp.kive.ai/oauth/revoke
+- id: llmstxt
+  name: llms.txt
+  conforms: true
+  evidence: https://kive.ai/llms.txt and https://kive.ai/docs/llms.txt both served
+- id: iso27001
+  name: ISO/IEC 27001:2022
+  conforms: true
+  evidence: Certificate ISO-27001-180326-7 valid through 2027-03-31, published at
+    https://trust.kive.ai/
+- id: openid-connect
+  name: OpenID Connect Discovery
+  conforms: false
+  evidence: /.well-known/openid-configuration returns 404 on mcp.kive.ai and kive.ai
+- id: rfc9116
+  name: security.txt
+  conforms: false
+  evidence: https://kive.ai/.well-known/security.txt returns 404
+- id: rfc7591
+  name: OAuth 2.0 Dynamic Client Registration
+  conforms: false
+  evidence: No registration_endpoint advertised; client_id_metadata_document_supported
+    is used instead
+- id: openapi
+  name: OpenAPI
+  conforms: false
+  evidence: No public REST API or OpenAPI description published
+- id: rfc9457
+  name: Problem Details for HTTP APIs
+  conforms: false
+  evidence: not applicable — no public REST API

@@ -1,0 +1,39 @@
+generated: '2026-07-19'
+method: searched
+source: live probes of the kive.ai and mcp.kive.ai hosts
+notes: >-
+  Kive publishes no /.well-known/ surface on its marketing/app host (kive.ai).
+  The OAuth discovery surface lives on the MCP host (mcp.kive.ai), which serves
+  both RFC 8414 authorization-server metadata and RFC 9728 protected-resource
+  metadata for the Kive MCP server.
+hosts:
+- host: https://mcp.kive.ai
+  documents:
+  - path: /.well-known/oauth-authorization-server
+    standard: RFC 8414
+    status: 200
+    file: kive-oauth-authorization-server.json
+  - path: /.well-known/oauth-protected-resource
+    standard: RFC 9728
+    status: 200
+    file: kive-oauth-protected-resource.json
+  - path: /.well-known/oauth-protected-resource/mcp
+    standard: RFC 9728
+    status: 200
+    file: null
+  - path: /.well-known/openid-configuration
+    standard: OpenID Connect Discovery
+    status: 404
+- host: https://kive.ai
+  documents:
+  - path: /.well-known/security.txt
+    standard: RFC 9116
+    status: 404
+  - path: /.well-known/api-catalog
+    standard: RFC 9727
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/openid-configuration
+    standard: OpenID Connect Discovery
+    status: 404

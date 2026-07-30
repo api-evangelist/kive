@@ -1,0 +1,32 @@
+generated: '2026-07-19'
+method: searched
+source: https://kive.ai/news
+url: https://kive.ai/news
+scheme: dated-product-updates
+notes: >-
+  Kive publishes a dated product-updates feed rather than a versioned API
+  changelog. Entries carry a release date and a feature name; no semantic
+  version numbers are used, and lifecycle state appears only as an inline
+  "(Beta)" marker. Because Kive ships no public REST API, none of these entries
+  describe breaking interface changes.
+current_version: null
+versioned: false
+entries:
+- date: '2026-07-08'
+  title: Introducing Creative Agent (Beta)
+  highlights: AI agent for brainstorming and task automation
+  lifecycle: beta
+  breaking: false
+- date: '2026-06-25'
+  title: Introducing Video Presets
+  highlights: Rapid video creation from saved products
+  breaking: false
+- date: '2026-03-05'
+  title: Bulk Generate is live
+  highlights: Consistent catalogue styling across products in one workflow
+  breaking: false
+- date: '2026-01-29'
+  title: Introducing Chat mode
+  highlights: Conversational editing and chained generation tasks
+  breaking: false
+window: recent entries only; https://kive.ai/news is the source of truth

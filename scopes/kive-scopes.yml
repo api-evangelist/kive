@@ -1,0 +1,37 @@
+generated: '2026-07-19'
+method: searched
+source: https://mcp.kive.ai/.well-known/oauth-authorization-server
+docs: https://kive.ai/docs/mcp/overview.md
+notes: >-
+  Scopes are advertised by the Kive MCP authorization server (RFC 8414) and
+  echoed by its protected-resource metadata (RFC 9728). Kive exposes a single
+  coarse-grained product scope rather than per-resource scopes; the effective
+  permission boundary is the authorizing user's Kive workspace role and the
+  workspace credit balance, both enforced server-side at call time.
+schemes:
+- name: KiveMCPOAuth
+  source: https://mcp.kive.ai/.well-known/oauth-authorization-server
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://mcp.kive.ai/oauth/authorize
+    tokenUrl: https://mcp.kive.ai/oauth/token
+scopes:
+- scope: kive:mcp
+  description: >-
+    Access the Kive MCP server on behalf of the authorizing user. Per Kive's MCP
+    documentation this authorization allows a client to view and edit Kive
+    assets, set up products, and spend Kive credits for supported generation
+    actions.
+  flows: [authorizationCode]
+  sources: [https://mcp.kive.ai/.well-known/oauth-authorization-server]
+- scope: offline_access
+  description: Issue a refresh token so the client can keep access without
+    re-prompting the user.
+  flows: [authorizationCode]
+  sources: [https://mcp.kive.ai/.well-known/oauth-authorization-server]
+enforcement:
+  model: workspace-permission-and-credit
+  notes: >-
+    Kive enforces workspace access, account permissions, and credit availability
+    independently of the granted scope. A scoped token cannot exceed the
+    authorizing user's workspace role.

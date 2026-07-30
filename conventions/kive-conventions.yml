@@ -1,0 +1,67 @@
+generated: '2026-07-19'
+method: searched
+source: https://kive.ai/docs/llms.txt
+notes: >-
+  Kive ships no public REST API; its cross-cutting semantics are those of the
+  Kive MCP server plus the credit/permission model the platform enforces behind
+  it. Fields Kive does not publish are recorded as null rather than guessed.
+authentication:
+  style: oauth2-authorization-code-pkce
+  transport: Bearer token in the Authorization header
+  artifact: authentication/kive-authentication.yml
+  scopes_artifact: scopes/kive-scopes.yml
+idempotency:
+  supported: false
+  header: null
+  notes: >-
+    Kive documents no idempotency key or replay-safe retry contract. Generation
+    is billed per successful call; the documented safety net is a refund rather
+    than deduplication ("Credits are only deducted for successful generations.
+    Failed generations and content-filtered outputs are automatically
+    refunded."). Retrying a generation produces new output and new charges.
+pagination:
+  style: null
+  notes: Not published — MCP tool result shapes are not documented at field level.
+versioning:
+  scheme: none-published
+  notes: >-
+    No API version is advertised on the MCP endpoint or in discovery metadata.
+    Product changes are announced by date at https://kive.ai/news.
+  artifact: changelog/kive-changelog.yml
+request_tracing:
+  header: null
+  notes: Not published.
+error_envelope:
+  format: mcp-tool-error
+  notes: >-
+    Per Kive's MCP docs, when a generation cannot run "the client will receive
+    the Kive error and can help you choose a different workspace, product,
+    preset, or generation setting." No structured error-code registry is
+    published.
+rate_limiting:
+  model: credit-based
+  signal_headers: null
+  artifact: rate-limits/kive-rate-limits.yml
+  notes: >-
+    Throughput is governed by workspace credit balance rather than request
+    quotas. When monthly credits deplete the user is shown an Upgrade message
+    and generation becomes unavailable; free users fall back to 1 free image
+    every 20-30 minutes depending on plan.
+authorization_model:
+  unit: workspace
+  notes: >-
+    Every MCP action runs under the authorizing user's workspace permissions and
+    the workspace credit balance, both enforced server-side. Clients may be
+    asked to select a workspace when the user belongs to more than one.
+asynchrony:
+  model: poll-for-status
+  notes: >-
+    Generation is long-running; Kive documents that clients "can also check
+    generation status while Kive is working" and should request the finished
+    asset once ready.
+batching:
+  video: up to four video presets and up to four sampled outputs in a single request
+  images: >-
+    Image generation cost is the per-image price multiplied by the number of
+    versions requested (default 4).
+  bulk: Bulk Generate covers an entire product catalogue in one workflow

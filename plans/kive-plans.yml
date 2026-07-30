@@ -1,0 +1,55 @@
+generated: '2026-07-19'
+method: searched
+source: https://kive.ai/pricing
+docs: https://kive.ai/docs/account-workspace-settings/plans-and-credits.md
+currency: USD
+billing_model: subscription + credits
+notes: >-
+  Prices captured as displayed on the Kive pricing page (billed-yearly rates).
+  Credit allowances are monthly. Kive also sells one-time credit top-ups, capped
+  each billing month at the plan's monthly credit limit.
+plans:
+- name: Free
+  price: 0
+  period: month
+  credits: 40
+  credits_period: one-time
+  eligibility: verified Google or Google Workspace accounts
+  features:
+  - Watermarks on generated images
+  - 1 free image every 30 minutes when out of credits
+- name: Basic
+  price: 15
+  period: month
+  billing: billed yearly
+  credits: 1000
+  credits_period: month
+  features:
+  - ~100 image generations
+  - ~40 video generations
+  - ~100 image edits
+  - ~100 upscales
+  - 1 free image every 30 minutes when out of credits
+- name: Pro
+  price: 75
+  period: month
+  billing: billed yearly
+  credits: 5000
+  credits_period: month
+  recommended: true
+  features:
+  - ~500 image generations
+  - ~200 video generations
+  - ~500 image edits
+  - ~125 video upscales
+  - 1 free image every 20 minutes when out of credits
+- name: Enterprise
+  price: null
+  period: month
+  credits: custom
+  contact: https://kive.ai/enterprise
+  features:
+  - Custom limits
+  - Personal onboarding
+  - Dedicated support
+  - Advanced security controls

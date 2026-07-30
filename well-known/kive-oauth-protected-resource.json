@@ -1,0 +1,1 @@
+{"authorization_servers":["https://mcp.kive.ai"],"bearer_methods_supported":["header"],"logo_uri":"https://mcp.kive.ai/kive_logo_192.png","resource":"https://mcp.kive.ai/mcp","resource_name":"Kive","scopes_supported":["kive:mcp","offline_access"]}

@@ -1,0 +1,57 @@
+generated: '2026-07-19'
+method: searched
+probe: true
+source: https://trust.kive.ai/
+url: https://trust.kive.ai/
+legal_entity: TO LABS AB
+platform: Noru (continuous compliance monitoring)
+last_updated: '2026-03-31'
+certifications:
+- name: ISO/IEC 27001:2022
+  status: Compliant
+  certificate_id: ISO-27001-180326-7
+  valid_through: '2027-03-31'
+  evidence: https://trust.kive.ai/
+controls:
+  total: 104
+  attested_as: Independently audited and continuously evidenced
+  domains:
+  - {name: Asset Management, count: 4}
+  - {name: Business Continuity, count: 3}
+  - {name: Backup Management, count: 2}
+  - {name: Configuration Management, count: 4}
+  - {name: Change Management, count: 2}
+  - {name: Cryptography, count: 3}
+  - {name: Data Management, count: 5}
+  - {name: Entity Management, count: 8}
+  - {name: Identity and Access Management, count: 10}
+  - {name: Incident Response, count: 3}
+  - {name: Mobile Device Management, count: 3}
+  - {name: Network Operations, count: 4}
+  - {name: Security Governance, count: 9}
+  - {name: People Resources, count: 3}
+  - {name: Privacy, count: 4}
+  - {name: Proactive Security, count: 2}
+  - {name: Risk Management, count: 8}
+  - {name: Service Lifecycle, count: 1}
+  - {name: Systems Monitoring, count: 3}
+  - {name: Site Operations, count: 8}
+  - {name: Training and Awareness, count: 6}
+  - {name: Third-Party Management, count: 5}
+  - {name: Vulnerability Management, count: 4}
+not_claimed:
+- SOC 2
+- HIPAA
+- PCI DSS
+- FedRAMP
+- NIS2
+not_claimed_note: >-
+  An earlier keyword probe flagged SOC 2 and HIPAA on this page. Manual review
+  shows "SOC 2" appears only in the Noru vendor footer boilerplate ("Continuous
+  compliance for ISO 27001, SOC 2, NIS2 and more") and not as a Kive claim. The
+  portal reports exactly one compliance framework ("Compliance 1"): ISO 27001.
+evidence:
+- source: https://trust.kive.ai/
+  kind: trust-portal
+  observed: ISO/IEC 27001:2022, certificate ISO-27001-180326-7, valid through
+    2027-03-31, 104 controls
