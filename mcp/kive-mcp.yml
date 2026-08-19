@@ -17,33 +17,55 @@ authorization:
   authorization_endpoint: https://mcp.kive.ai/oauth/authorize
   token_endpoint: https://mcp.kive.ai/oauth/token
   revocation_endpoint: https://mcp.kive.ai/oauth/revoke
-  grant_types: [authorization_code, refresh_token]
-  pkce: [S256]
-  bearer_methods: [header]
-  scopes: [kive:mcp, offline_access]
+  grant_types:
+  - authorization_code
+  - refresh_token
+  pkce:
+  - S256
+  bearer_methods:
+  - header
+  scopes:
+  - kive:mcp
+  - offline_access
   dynamic_client_registration: false
   client_id_metadata_document_supported: true
-# Capabilities as documented by Kive. Kive does not publish individual tool
-# names, so these are the documented capability statements, not invented
-# tool identifiers.
 capabilities:
-- Browse Kive workspaces, saved products, trained models, studios, video presets,
-  and previous generations
+- Browse Kive workspaces, saved products, trained models, studios, video presets, and previous generations
 - Show generated images and videos inline when a Kive output is ready
 - Create a saved product from a product page, public image URL, or uploaded product image
 - Generate product images with Kive studios
-- Generate product videos with Kive video presets (up to four presets and up to four
-  sampled outputs per request)
+- Generate product videos with Kive video presets (up to four presets and up to four sampled outputs per
+  request)
 - Edit existing images with Kive image editing
 - Check generation status while Kive is working
 behavior:
   video_defaults: one video by default, with audio on
   permissions: uses the caller's Kive workspace permissions and credits
-  workspace_selection: client may prompt for a workspace when the user belongs to
-    more than one
+  workspace_selection: client may prompt for a workspace when the user belongs to more than one
 clients:
-  verified: [Claude, ChatGPT, Cursor, Notion]
-  documented_guides: [ChatGPT, Cursor, Figma, Notion, Zapier, n8n, Lovable, Windsurf,
-    v0, Replit, Bolt]
+  verified:
+  - Claude
+  - ChatGPT
+  - Cursor
+  - Notion
+  documented_guides:
+  - ChatGPT
+  - Cursor
+  - Figma
+  - Notion
+  - Zapier
+  - n8n
+  - Lovable
+  - Windsurf
+  - v0
+  - Replit
+  - Bolt
   guide_url_pattern: https://kive.ai/mcp/<provider>
   management: Settings -> MCP (Apps / Custom connections), with per-app Revoke
+deployment:
+  mode: remote
+  endpoint: https://mcp.kive.ai/mcp
+  verified: probed
+  probe: gated
+  checked: '2026-08-12'
+  source: catalog MCP census
