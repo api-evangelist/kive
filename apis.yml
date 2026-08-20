@@ -37,6 +37,18 @@ created: '2026-07-17'
 modified: '2026-07-19'
 tags:
 - Company
+- Software-as-a-Service
+- Artificial Intelligence
+- Generative AI
+- Creative
+- Product Photography
+- Digital Asset Management
+- E-Commerce
+- Image
+- Video
+- MCP
+tags_raw:
+- Company
 - SaaS
 - Artificial Intelligence
 - Generative AI
@@ -59,6 +71,11 @@ apis:
   humanURL: https://kive.ai/mcp
   baseURL: https://mcp.kive.ai/mcp
   tags:
+  - MCP
+  - Generative AI
+  - Image
+  - Video
+  tags_raw:
   - MCP
   - Generative AI
   - Images
