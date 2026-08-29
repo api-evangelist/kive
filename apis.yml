@@ -12,6 +12,17 @@ description: 'Kive is an AI product photography and campaign content platform fo
   mcp.kive.ai that lets agents browse workspaces and products and create images and
   videos on the user''s credits.'
 url: https://raw.githubusercontent.com/api-evangelist/kive/refs/heads/main/apis.yml
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
