@@ -69,3 +69,20 @@ deployment:
   probe: gated
   checked: '2026-08-12'
   source: catalog MCP census
+rfc9728:
+  endpoint: https://mcp.kive.ai/mcp
+  metadata_url: https://mcp.kive.ai/.well-known/oauth-protected-resource/mcp
+  discovered_via: WWW-Authenticate resource_metadata on an anonymous POST initialize
+  fetched: '2026-09-25'
+  http_status: 200
+  content_type: application/json
+  document:
+    resource: https://mcp.kive.ai/mcp
+    authorization_servers:
+    - https://mcp.kive.ai
+    scopes_supported:
+    - kive:mcp
+    - offline_access
+    bearer_methods_supported:
+    - header
+    resource_name: Kive
