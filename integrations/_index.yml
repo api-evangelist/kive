@@ -22,3 +22,15 @@
     detected: '2026-10-14'
   status: not-a-workflow
   arazzo: null
+- slug: kive-shopify-own
+  label: Shopify (own)
+  partner: shopify
+  partner_name: Shopify (own)
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://apps.shopify.com/kive
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null

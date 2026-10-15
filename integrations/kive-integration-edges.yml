@@ -11,6 +11,7 @@ checked:
 - https://n8n.io/integrations/kive/
 - https://registry.modelcontextprotocol.io/v0/servers
 - https://zapier.com/apps/kive/integrations
+- shopify/integrations/shopify-integration-edges.yml
 summary: null
 marketplace_apps: []
 edges:
@@ -45,4 +46,22 @@ edges:
   - namespace-domain
   detected_by: sweep-agent-tools.py
   first_seen: '2026-10-14'
+- partner_name: Shopify (own)
+  partner: shopify
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://apps.shopify.com/kive
+  mirror_of: shopify/integrations/shopify-integration-edges.yml
+  apps:
+  - Kive
+  listing_count: 1
+  detected: '2026-10-15'
+  detected_by: mirror-platform-listings.py
+  publisher_verified:
+  - Built for Shopify
 templates: []
