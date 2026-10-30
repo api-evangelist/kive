@@ -64,33 +64,122 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Kive is an AI product photography and campaign content platform for e-commerce brands, built by TO LABS AB and used by more than 10,000 brands. It generates product shots, lifestyle scenes, campaign imagery and product videos from a brand's own assets using a catalogue of curated visual presets ("studios"), paired with a creative asset library, AI search, boards, custom-trained subject models, bulk catalogue generation and AI editing tools.
+Kive is an AI product photography and campaign content platform for e-commerce brands, built by TO LABS AB and used by more than 10,000 brands. It generates accurate product shots, lifestyle scenes, campaign imagery and product videos from a brand's own assets, using a large catalogue of professionally curated visual presets ("studios") tuned to categories such as fashion, cosmetics, skincare, jewellery and footwear. The platform pairs generation with a creative asset library, AI-powered search, boards, custom-trained subject models, bulk catalogue generation and editing tools (background removal and replacement, canvas extension, upscaling). Kive publishes no public REST API; its programmable surface is an OAuth-protected Model Context Protocol server at mcp.kive.ai that lets agents browse workspaces and products and create images and videos on the user's credits.
 
-Kive publishes **no public REST API**. Its programmable surface is an **OAuth-protected Model Context Protocol server** at `https://mcp.kive.ai/mcp`, which lets agents browse workspaces, saved products, trained models, studios and video presets, create products, generate images and videos, and edit outputs — all on the authorizing user's workspace permissions and credits.
+**Areas:** Company · Software-as-a-Service · Artificial Intelligence · Generative AI · Creative · Product Photography · Digital Asset Management · E-Commerce · Image · Video · MCP
 
-- Website — https://www.kive.ai/
-- MCP hub — https://kive.ai/mcp
-- Documentation — https://kive.ai/docs
-- Trust portal — https://trust.kive.ai/ (ISO/IEC 27001:2022)
+## Kive on APIs.io
 
-Backed by: creandum, eqt-ventures
+Everything profiled for Kive is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/kive/](https://apis.io/providers/kive/)** — or go straight to one of the APIs or properties below.
 
-## Artifacts
+### APIs (1)
 
-| Artifact | Method |
+- [Kive MCP Server](https://apis.io/apis/kive/mcp/) — The Kive MCP server is Kive's programmable interface: an OAuth 2.1 protected Model Context Protocol endpoint that lets an authorized agent browse Kive…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [kive](https://apis.io/servers/kive/kive/)
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Kive Authentication](https://apis.io/security/kive/kive-authentication/)
+- [Kive Domain Security](https://apis.io/security/kive/kive-domain-security/)
+- [Kive Trust Center](https://apis.io/security/kive/kive-trust-center/)
+- [Kive Vulnerability Disclosure](https://apis.io/security/kive/kive-vulnerability-disclosure/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Kive Scopes](https://apis.io/scopes/kive/kive-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Kive Plans](https://apis.io/plans/kive/kive-plans/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Kive Rate Limits](https://apis.io/rate-limits/kive/kive-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.kive.ai/)
+- [Documentation](https://kive.ai/docs)
+- [Getting started](https://kive.ai/docs/introduction-getting-started/start-here.md)
+- [Pricing](https://kive.ai/pricing)
+- [Sign up](https://kive.ai/signup)
+- [Support](https://kive.ai/docs/troubleshooting-faqs/contact-support.md)
+- [Blog](https://kive.ai/news)
+- [Security](https://trust.kive.ai/)
+- [Compliance](https://trust.kive.ai/)
+- [Terms of service](https://kive.ai/terms)
+- [Privacy policy](https://kive.ai/privacy)
+
+## API Evangelist rating
+
+**Kin Score 42.6** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
 |---|---|
-| `mcp/kive-mcp.yml` | searched — published MCP server, OAuth metadata, documented capabilities |
-| `authentication/kive-authentication.yml` | searched — OAuth 2.1 authorization code + PKCE |
-| `scopes/kive-scopes.yml` | searched — `kive:mcp`, `offline_access` |
-| `well-known/` | searched — RFC 8414 + RFC 9728 discovery documents (raw) |
-| `llms/kive-llms.txt` | searched — verbatim from https://kive.ai/llms.txt |
-| `conventions/kive-conventions.yml` | searched — credit model, async polling, no idempotency contract |
-| `conformance/kive-conformance.yml` | searched — MCP, OAuth/RFC stack, ISO 27001 |
-| `changelog/kive-changelog.yml` | searched — dated product-updates feed |
-| `plans/kive-plans.yml` | searched — Free/Basic/Pro/Enterprise |
-| `rate-limits/kive-rate-limits.yml` | searched — credit-based metering |
-| `security/kive-trust-center.yml` | searched — ISO 27001 cert, 104 controls |
-| `security/kive-vulnerability-disclosure.yml` | searched — security@kive.ai via trust portal |
-| `security/kive-domain-security.yml` | probed — TLS 1.3, HSTS, SPF, DMARC reject |
+| Discoverability | 75.0 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 57.9 |
+| Developer ergonomics | 50.0 |
+| Access clarity | 64.5 |
 
-Not applicable / not published: OpenAPI, AsyncAPI, webhooks, SDKs/packages, CLI, sandbox, status page, deprecation policy, security.txt.
+**Agent readiness 25.5** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | verified |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | verified |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 34.5** — AI & Biometrics
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/kive/](https://apis.io/providers/kive/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Kive: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/kive/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
